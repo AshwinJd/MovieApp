@@ -16,7 +16,7 @@ app.listen(8080,function(){
 
 // app.use('/',routes);
 
-
+app.get('/all',sendAll);
 
 function sendAll(request,response){
   var data = JSON.stringify(json,null,4);
