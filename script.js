@@ -10,6 +10,12 @@ var app = express();
 // app.set('views', path.join(__dirname,'views'));
 // app.set('view engine' , 'ejs');
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.listen(8080,function(){
   console.log("Server Listening at 8080");
 });
@@ -19,6 +25,6 @@ app.listen(8080,function(){
 app.get('/all',sendAll);
 
 function sendAll(request,response){
-  var data = JSON.stringify(json,null,4);
+   var data = JSON.stringify(json,null,4);
   response.send(data);
 }
