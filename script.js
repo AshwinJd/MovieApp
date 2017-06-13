@@ -25,6 +25,6 @@ app.listen(8080,function(){
 app.get('/all',sendAll);
 
 function sendAll(request,response){
-   var data = JSON.stringify(json,null,4);
-  response.send(data);
+  //  var data = JSON.stringify(json,null,4);
+  response.send(json);
 }
